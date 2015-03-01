@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="72dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    >
+    <ImageButton
+        android:id="@+id/icon_image_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="fitXY"
+        android:padding="0dp"
+        android:src="@drawable/common_signin_btn_icon_dark"
+        style="?android:borderlessButtonStyle"
+        />
+    <TextView
+        android:id="@+id/name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google+"
+        android:singleLine="true"
+        android:ellipsize="end"
+
+        android:gravity="center"
+        style="?android:textAppearanceSmall"
+        />
+</LinearLayout>

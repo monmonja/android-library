@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="placeholder_lorem_ipsum">lorem ipsum</string>
+
+    <string name="company_copyright">\u00A9 2014</string>
+    <string name="company_name">Monmonja</string>
+
+    <string name="preference_general">General</string>
+    <string name="clear_cache_title">Clear Cache</string>
+    <string name="clear_cache_summary">Current cache size is %1$s.</string>
+</resources>

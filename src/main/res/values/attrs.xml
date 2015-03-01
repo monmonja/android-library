@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MultiSwipeRefreshLayout">
+        <attr name="foreground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="EditLabelText">
+        <attr name="label" format="string"/>
+        <attr name="hint" format="string"/>
+
+        <attr name="focusColor" format="color"/>
+        <attr name="blurColor" format="color"/>
+
+        <attr name="lines" format="integer"/>
+        <attr name="characterLimit" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="NavDrawerItem">
+        <attr name="navIcon" format="reference"/>
+        <attr name="navLabel" format="string"/>
+    </declare-styleable>
+</resources>

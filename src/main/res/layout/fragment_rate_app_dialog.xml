@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="?android:attr/buttonBarStyle">
+    <TextView
+        android:id="@+id/body_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Body"
+        android:layout_margin="@dimen/margin_medium"
+        style="?android:textAppearanceMedium"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="?android:buttonBarStyle"
+        android:divider="?android:dividerHorizontal"
+        android:dividerPadding="4dp"
+        android:showDividers="middle"
+        android:weightSum="3"
+        >
+        <Button
+            android:id="@+id/no_rate_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="No, Thanks"
+            android:singleLine="true"
+            android:textSize="10sp"
+            style="?android:buttonBarButtonStyle"
+            />
+        <Button
+            android:id="@+id/remind_later_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Remind later"
+            android:singleLine="true"
+            android:textSize="10sp"
+            style="?android:buttonBarButtonStyle"
+            />
+        <Button
+            android:id="@+id/rate_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Rate App"
+            style="?android:buttonBarButtonStyle"
+            />
+    </LinearLayout>
+</LinearLayout>

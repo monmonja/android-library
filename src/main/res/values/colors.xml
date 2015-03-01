@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider_color">#1F000000</color>
+    <color name="loading_image_color">#328E0C</color>
+    <color name="toast_background">#e6000000</color>
+
+</resources>
