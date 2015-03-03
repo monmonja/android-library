@@ -1,5 +1,6 @@
 package com.monmonja.library.adapter;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -13,23 +14,25 @@ import java.util.Vector;
 /**
  * Created by almondjoseph on 3/3/15.
  */
-public class SimplePagerAdapter extends FragmentPagerAdapter {
-    private final List<Fragment> fragments;
+public class SimplePagerAdapter  extends FragmentPagerAdapter {
+    private final List<Fragment> mFragments;
+    private final Context mContext;
 
-    public SimplePagerAdapter(FragmentManager fm) {
+    public SimplePagerAdapter(Context context, FragmentManager fm) {
         super(fm);
-        this.fragments = new Vector<Fragment>();
+        mContext = context;
+        this.mFragments = new Vector<Fragment>();
     }
 
 
     public void addItem(Fragment frag) {
-        this.fragments.add(frag);
+        this.mFragments.add(frag);
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
         if (getItem(position) instanceof IFragmentInPager) {
-            return ((IFragmentInPager) getItem(position)).getTitle();
+            return mContext.getResources().getString(((IFragmentInPager) getItem(position)).getTitle());
         } else {
             return "Implement IFragmentInPager";
         }
@@ -38,18 +41,18 @@ public class SimplePagerAdapter extends FragmentPagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int pos) {
         final Fragment frag = (Fragment) super.instantiateItem(container, pos);
-        this.fragments.set(pos, frag);
+        this.mFragments.set(pos, frag);
 
         return frag;
     }
 
     @Override
     public Fragment getItem(int pos) {
-        return this.fragments.get(pos);
+        return this.mFragments.get(pos);
     }
 
     @Override
     public int getCount() {
-        return this.fragments.size();
+        return this.mFragments.size();
     }
 }
