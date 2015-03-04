@@ -13,4 +13,10 @@
 
     <dimen name="keyline_1">16dp</dimen>
     <dimen name="navdrawer_width">320dp</dimen>
+
+    <dimen name="fab_elevation">8dp</dimen>
+    <dimen name="fab_press_translation_z">9dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_size_small">40dp</dimen>
+    <dimen name="fab_icon_size">24dp</dimen>
 </resources>
