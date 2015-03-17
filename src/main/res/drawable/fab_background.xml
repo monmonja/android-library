@@ -105,7 +105,7 @@
     </item>
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/red"/>
+            <solid android:color="@android:color/white"/>
         </shape>
     </item>
 </layer-list>
