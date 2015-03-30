@@ -27,17 +27,20 @@ public class DirectoryUtils {
      */
     public static long getDirectorSize(File dir) {
         long result = 0;
-        File[] fileList = dir.listFiles();
+        if (dir.exists()) {
+            File[] fileList = dir.listFiles();
 
-        for(int i = 0; i < fileList.length; i++) {
-            // Recursive call if it's a directory
-            if(fileList[i].isDirectory()) {
-                result += getDirectorSize(fileList [i]);
-            } else {
-                // Sum the file size in bytes
-                result += fileList[i].length();
+            for (int i = 0; i < fileList.length; i++) {
+                // Recursive call if it's a directory
+                if (fileList[i].isDirectory()) {
+                    result += getDirectorSize(fileList[i]);
+                } else {
+                    // Sum the file size in bytes
+                    result += fileList[i].length();
+                }
             }
         }
+
         return result; // return the file size
     }
 
