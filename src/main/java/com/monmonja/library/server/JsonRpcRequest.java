@@ -16,6 +16,8 @@
 
 package com.monmonja.library.server;
 
+import android.util.Log;
+
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -98,6 +100,7 @@ public class JsonRpcRequest<T> {
                 if (jsonResponse.result != null) {
                     success.success(gson.fromJson(jsonResponse.result, clazz));
                 } else {
+                    Log.d("JsonRpc", responseData);
                     failure.failure("JSONPRC2 error");
 //                    successHandler.sendEmptyMessage(0);
                 }
