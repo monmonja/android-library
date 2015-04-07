@@ -19,7 +19,7 @@
         android:divider="?android:dividerHorizontal"
         android:dividerPadding="4dp"
         android:showDividers="middle"
-        android:weightSum="3"
+        android:weightSum="2"
         >
         <Button
             android:id="@+id/no_rate_btn"
@@ -27,16 +27,6 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="No, Thanks"
-            android:singleLine="true"
-            android:textSize="10sp"
-            style="?android:buttonBarButtonStyle"
-            />
-        <Button
-            android:id="@+id/remind_later_btn"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Remind later"
             android:singleLine="true"
             android:textSize="10sp"
             style="?android:buttonBarButtonStyle"

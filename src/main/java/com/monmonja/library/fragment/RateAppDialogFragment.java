@@ -41,7 +41,6 @@ public class RateAppDialogFragment extends DialogFragment implements View.OnClic
     public String mAlertTitle;
     public String mAlertBody;
     private Button mDisableRateBtn;
-    private Button mReminderLaterBtn;
     public String mMarketUri;
     private Button mRateBtn;
 
@@ -65,8 +64,6 @@ public class RateAppDialogFragment extends DialogFragment implements View.OnClic
         mDisableRateBtn = (Button) view.findViewById(R.id.no_rate_btn);
         mDisableRateBtn.setOnClickListener(this);
 
-        mReminderLaterBtn = (Button) view.findViewById(R.id.remind_later_btn);
-        mReminderLaterBtn.setOnClickListener(this);
         mRateBtn = (Button) view.findViewById(R.id.rate_btn);
         mRateBtn.setOnClickListener(this);
     }
@@ -79,11 +76,7 @@ public class RateAppDialogFragment extends DialogFragment implements View.OnClic
             editor.putBoolean(PlayServiceUtils.PREF_RATE_APP_ENABLE, false);
             editor.apply();
             dismiss();
-        } else if (v.equals(mReminderLaterBtn)) {
-            editor.putInt(PlayServiceUtils.PREF_RATE_APP, 1);
-            editor.apply();
-            dismiss();
-        }else if (v.equals(mRateBtn)) {
+        } else if (v.equals(mRateBtn)) {
             editor.putBoolean(PlayServiceUtils.PREF_RATE_APP_ENABLE, false);
             editor.apply();
             dismiss();
