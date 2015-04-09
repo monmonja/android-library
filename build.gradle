@@ -1,13 +1,31 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+    }
+}
+
+
+
 // http://stackoverflow.com/questions/18559932/gradle-maven-plugin-install-task-does-not-work-with-android-library-project
 apply plugin: 'android-library'
 apply plugin: 'maven-publish'
 
-android.libraryVariants
+group GROUP
+version VERSION_NAME
 
 android {
-    group GROUP
-    version VERSION_NAME
-
     compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
     buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
@@ -23,12 +41,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
+android.libraryVariants
 publishing {
     publications {
         maven(MavenPublication) {
             artifact bundleRelease
+        }
+    }
+
+    repositories {
+        maven {
+            url "file:/${project.projectDir}/artifacts"
         }
     }
 }
