@@ -92,6 +92,7 @@ public class PlayServiceUtils {
         request.addTestDevice("71C3880FBC9613F0105CC31B143E9B4E"); // oneplus one - almond
         request.addTestDevice("7D029ED128C55FC1FD82213D1957E376"); // mi3 - mom
         request.addTestDevice("10C5F1C7812038544A75DC84EDF4493B"); // nexus 7 - almond
+        request.addTestDevice("FF93ACE81707704AC4FB5298C39A9AA7"); // xioami redmi2 - almond
 
         adView.loadAd(request.build());
 
