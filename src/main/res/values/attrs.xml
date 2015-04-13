@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="baseLayout">
+        <attr name="statusBarColor" format="color" />
+        <attr name="navigationBarColor" format="color" />
+        <attr name="fullBackground" format="reference" />
+    </declare-styleable>
+
     <declare-styleable name="MultiSwipeRefreshLayout">
         <attr name="foreground" format="reference" />
     </declare-styleable>
