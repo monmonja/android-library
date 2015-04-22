@@ -13,9 +13,12 @@
         android:lines="1"
         android:text="Label"
         android:textIsSelectable="true"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="gone"
+        />
     <EditText
         android:id="@+id/edit_text"
+        android:layout_below="@+id/label_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Placeholder"

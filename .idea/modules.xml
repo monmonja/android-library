@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/android-library.iml" filepath="$PROJECT_DIR$/.idea/android-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/monmonja-library.iml" filepath="$PROJECT_DIR$/monmonja-library.iml" />
     </modules>
   </component>
 </project>
-

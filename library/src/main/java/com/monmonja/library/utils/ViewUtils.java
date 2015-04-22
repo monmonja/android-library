@@ -36,6 +36,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import android.view.ContextThemeWrapper;
+import android.app.AlertDialog;
+import android.os.Build;
 
 /**
  * Created by almondjoseph on 18/10/14.
@@ -68,6 +71,17 @@ public class ViewUtils {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    public static AlertDialog.Builder buildAlertDialogWithStyle (Context context, int styleResId) {
+        final AlertDialog.Builder builder;
+        // 11 is honeycomb where builder(context, resId) is allowed
+        if (Build.VERSION.SDK_INT >= 11) {
+            builder = new AlertDialog.Builder(context, styleResId);
+        } else {
+            builder = new AlertDialog.Builder(new ContextThemeWrapper(context, styleResId));
+        }
+        return builder;
     }
 
     public static class GetMonmonjaApps extends AsyncTask<String, Void, JSONArray> {

@@ -20,64 +20,43 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.support.v7.widget.SwitchCompat;
 
 import com.monmonja.library.R;
 
 /**
  * Created by almondjoseph on 5/9/14.
  */
-public class NavDrawerSwitch extends LinearLayout implements View.OnClickListener {
+public class NavDrawerButton extends LinearLayout {
     private final Context mContext;
 
-    protected SwitchCompat mSwitch;
+    protected ImageView mImageView;
     protected TextView mTextView;
 
-    public NavDrawerSwitch(Context context, AttributeSet attrs) {
+    public NavDrawerButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         init(attrs);
     }
 
-
-
     private void init (AttributeSet attrs) {
-        TypedArray attributesFromXmlLayout = mContext.obtainStyledAttributes(attrs, R.styleable.NavDrawerItem);
+        TypedArray attributesFromXmlLayout = mContext.obtainStyledAttributes(attrs, R.styleable.navDrawerItem);
 
-        String label = attributesFromXmlLayout.getString(R.styleable.NavDrawerItem_navLabel);
+        Drawable iconDrawable = attributesFromXmlLayout.getDrawable(R.styleable.navDrawerItem_navIcon);
+        String label = attributesFromXmlLayout.getString(R.styleable.navDrawerItem_navLabel);
 
-        inflate(getContext(), R.layout.navdrawer_switch, this);
-
-        mSwitch = (SwitchCompat) findViewById(R.id.switch_compat);
+        inflate(getContext(), R.layout.navdrawer_button, this);
+        mImageView = (ImageView) findViewById(R.id.icon_image_view);
+        mImageView.setImageDrawable(iconDrawable);
 
         mTextView = (TextView) findViewById(R.id.text_view);
-        mTextView.setOnClickListener(this);
         mTextView.setText(label);
+
+
+
     }
 
-    public SwitchCompat getSwitch() {
-        return mSwitch;
-    }
 
-    public void setValue(boolean condition) {
-        mSwitch.setChecked(condition);
-    }
-
-    public void setSwitchOnChangeListener(CompoundButton.OnCheckedChangeListener listener) {
-        mSwitch.setOnCheckedChangeListener(listener);
-    }
-
-    @Override
-    public void onClick(View v) {
-        mSwitch.setChecked(!mSwitch.isChecked());
-    }
-
-    public void setSwitchTag (String tag) {
-        mSwitch.setTag(tag);
-    }
 }

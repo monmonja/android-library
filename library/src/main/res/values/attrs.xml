@@ -10,18 +10,20 @@
         <attr name="foreground" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="EditLabelText">
+    <declare-styleable name="editLabelText">
         <attr name="label" format="string"/>
-        <attr name="hint" format="string"/>
+        <attr name="hint" format="reference"/>
 
+        <attr name="textColor" format="color"/>
         <attr name="focusColor" format="color"/>
         <attr name="blurColor" format="color"/>
+        <attr name="hintColor" format="color"/>
 
         <attr name="lines" format="integer"/>
         <attr name="characterLimit" format="integer"/>
     </declare-styleable>
 
-    <declare-styleable name="NavDrawerItem">
+    <declare-styleable name="navDrawerItem">
         <attr name="navIcon" format="reference"/>
         <attr name="navLabel" format="string"/>
     </declare-styleable>
